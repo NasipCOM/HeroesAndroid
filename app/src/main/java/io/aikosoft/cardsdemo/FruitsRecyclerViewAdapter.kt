@@ -1,0 +1,49 @@
+package io.aikosoft.cardsdemo
+
+import android.content.Context
+import android.content.Intent
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
+
+class FruitsRecyclerViewAdapter(private val fruits: List<Fruit>) :
+        RecyclerView.Adapter<FruitsRecyclerViewAdapter.ViewHolder>() {
+
+    private lateinit var context: Context
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        context = parent.context
+        val view = LayoutInflater.from(context).inflate(R.layout.item_fruit, parent, false)
+
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(fruits[position])
+    }
+
+    override fun getItemCount(): Int = fruits.size
+
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        private val tvName: TextView = itemView.findViewById(R.id.tv_name)
+        private val tvDescription: TextView = itemView.findViewById(R.id.tv_description)
+        private val ivPhoto: ImageView = itemView.findViewById(R.id.iv_photo)
+
+        fun bind(fruit: Fruit) {
+            tvName.text = fruit.name
+            ivPhoto.setImageResource(fruit.imgRes)
+            tvDescription.text = fruit.description
+
+            itemView.setOnClickListener {
+                Intent(context, DetailActivity::class.java).also {
+                    it.putExtra("fruit", fruit)
+                    context.startActivity(it)
+                }
+            }
+        }
+    }
+}
