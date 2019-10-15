@@ -9,8 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class FruitsRecyclerViewAdapter(private val fruits: List<Fruit>) :
-        RecyclerView.Adapter<FruitsRecyclerViewAdapter.ViewHolder>() {
+class ApplicationRecyclerViewAdapter(private val app: List<App>) :
+        RecyclerView.Adapter<ApplicationRecyclerViewAdapter.ViewHolder>() {
 
     private lateinit var context: Context
 
@@ -22,25 +22,32 @@ class FruitsRecyclerViewAdapter(private val fruits: List<Fruit>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(fruits[position])
+        holder.bind(app[position])
     }
 
-    override fun getItemCount(): Int = fruits.size
+    override fun getItemCount(): Int = app.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private val tvName: TextView = itemView.findViewById(R.id.tv_name)
         private val tvDescription: TextView = itemView.findViewById(R.id.tv_description)
+        private val tvRating: TextView = itemView.findViewById(R.id.tv_rating)
+        private val tvStatus: TextView = itemView.findViewById(R.id.tv_status)
         private val ivPhoto: ImageView = itemView.findViewById(R.id.iv_photo)
+        private val ivRating: ImageView = itemView.findViewById(R.id.iv_photo_rating)
 
-        fun bind(fruit: Fruit) {
-            tvName.text = fruit.name
-            ivPhoto.setImageResource(fruit.imgRes)
-            tvDescription.text = fruit.description
+
+        fun bind(app: App) {
+            tvName.text = app.name
+            ivPhoto.setImageResource(app.imgRes)
+            ivRating.setImageResource(app.imgRating)
+            tvDescription.text = app.description
+            tvRating.text = app.rating
+            tvStatus.text = app.status
 
             itemView.setOnClickListener {
                 Intent(context, DetailActivity::class.java).also {
-                    it.putExtra("fruit", fruit)
+                    it.putExtra("app", app)
                     context.startActivity(it)
                 }
             }

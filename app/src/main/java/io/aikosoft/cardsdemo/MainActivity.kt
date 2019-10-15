@@ -19,9 +19,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getFruits() = arrayListOf(
-            Fruit("Apple", "Apple is red", R.drawable.apple),
-            Fruit("Cherry", "Cherry is sweet", R.drawable.cherry),
-            Fruit("Tomatoes", "Tomatoes is like a ball", R.drawable.tomatos),
-            Fruit(name = "Cabbage", imgRes = R.drawable.cabbage)
+            App("Twitter", "Twitter, Inc.","4.5","Installed", R.drawable.twitter, R.drawable.rating_black  ),
+            App("Facebook", "Sign up for Facebook","4.2", "Free",R.drawable.facebook, R.drawable.rating_black),
+            App("Instagram", "Instagram","EDITORS' CHOICE", "Update",R.drawable.instagram, R.drawable.rating_black)
+//            App(name = "Cabbage", imgRes = R.drawable.cabbage)
     )
 }
