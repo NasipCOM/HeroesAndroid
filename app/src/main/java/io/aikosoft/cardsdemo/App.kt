@@ -2,7 +2,7 @@ package io.aikosoft.cardsdemo
 
 import java.io.Serializable
 
-data class Fruit(
+data class App(
         val name: String = "",
         val description: String = "",
         val rating: String = "",

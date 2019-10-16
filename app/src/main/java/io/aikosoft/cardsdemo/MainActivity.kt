@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recycler_view.layoutManager = LinearLayoutManager(this)
-        recycler_view.adapter = FruitsRecyclerViewAdapter(getFruits().apply {
+        recycler_view.adapter = ApplicationRecyclerViewAdapter(getFruits().apply {
             addAll(getFruits())
             addAll(getFruits())
         })

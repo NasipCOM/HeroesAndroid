@@ -13,7 +13,7 @@ class DetailActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        intent.getSerializableExtra("fruit").let { it as Fruit }.apply {
+        intent.getSerializableExtra("app").let { it as App }.apply {
             title = name
             iv_fruit_image.setImageResource(imgRes)
         }
