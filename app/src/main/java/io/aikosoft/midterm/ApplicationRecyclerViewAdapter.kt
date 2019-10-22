@@ -1,4 +1,4 @@
-package io.aikosoft.cardsdemo
+package io.aikosoft.midterm
 
 import android.content.Context
 import android.content.Intent
@@ -32,7 +32,7 @@ class ApplicationRecyclerViewAdapter(private val app: List<App>) :
         private val tvName: TextView = itemView.findViewById(R.id.tv_name)
         private val tvDescription: TextView = itemView.findViewById(R.id.tv_description)
         private val tvRating: TextView = itemView.findViewById(R.id.tv_rating)
-        private val tvStatus: TextView = itemView.findViewById(R.id.tv_status)
+//        private val tvStatus: TextView = itemView.findViewById(R.id.tv_status)
         private val ivPhoto: ImageView = itemView.findViewById(R.id.iv_photo)
         private val ivRating: ImageView = itemView.findViewById(R.id.iv_photo_rating)
 
@@ -43,13 +43,14 @@ class ApplicationRecyclerViewAdapter(private val app: List<App>) :
             ivRating.setImageResource(app.imgRating)
             tvDescription.text = app.description
             tvRating.text = app.rating
-            tvStatus.text = app.status
+//            tvStatus.text = app.status
 
-            itemView.setOnClickListener {
-                Intent(context, DetailActivity::class.java).also {
-                    it.putExtra("app", app)
-                    context.startActivity(it)
-                }
+                itemView.setOnLongClickListener {
+                    Intent(context, DetailActivity::class.java).also {
+                        it.putExtra("app", app)
+                        context.startActivity(it)
+                    }
+                    true
             }
         }
     }

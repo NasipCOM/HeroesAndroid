@@ -1,4 +1,4 @@
-package io.aikosoft.cardsdemo
+package io.aikosoft.midterm
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -19,9 +19,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getFruits() = arrayListOf(
-            App("Twitter", "Twitter, Inc.","4.5","Installed", R.drawable.twitter, R.drawable.rating_black  ),
-            App("Facebook", "Sign up for Facebook","4.2", "Free",R.drawable.facebook, R.drawable.rating_black),
-            App("Instagram", "Instagram","EDITORS' CHOICE", "Update",R.drawable.instagram, R.drawable.rating_black)
-//            App(name = "Cabbage", imgRes = R.drawable.cabbage)
+            App("Spiderman", "17 Years Old","Power type: 100%", R.drawable.spider, R.drawable.rating_black  ),
+            App("Superman", "30 Years Old","Power type 100%", R.drawable.superman, R.drawable.rating_black),
+            App("Batman", "43 Years Old","Power type 100%", R.drawable.batman, R.drawable.rating_black),
+            App("Halk", "47 Years Old","Power type 100%", R.drawable.halk, R.drawable.rating_black)
+
     )
 }

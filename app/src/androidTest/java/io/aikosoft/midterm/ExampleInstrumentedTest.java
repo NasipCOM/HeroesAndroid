@@ -1,4 +1,4 @@
-package io.aikosoft.cardsdemo;
+package io.aikosoft.midterm;
 
 import android.content.Context;
 

@@ -1,11 +1,12 @@
 <resources>
-    <string name="app_name" color="black">New Market</string>
+    <string name="app_name" color="black">Our Heroes</string>
     <string name="title_activity_detail">DetailActivity</string>
     <string name="large_text">
         "\n\n"
-        "A social network is a website that allows people with "
-        "similar interests to come together and share "
-        "information, photos and videos. "
+        "A hero is any man or woman who refuses to live in an utterly passive manner."
+        "However, recognizing that virtue as "heroic" depends on who benefits as a result "
+        "of that refusal - another person, a tribe, a nation, etc.Blackbeard is a hero "
+        "to the romantic dreamer trapped at his desk. Drake is a hero to an entire country."
     </string>
     <string name="action_settings">Settings</string>
 </resources>
