@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class ApplicationRecyclerViewAdapter(private val app: List<App>) :
@@ -46,12 +47,16 @@ class ApplicationRecyclerViewAdapter(private val app: List<App>) :
 //            tvStatus.text = app.status
 
                 itemView.setOnLongClickListener {
-                    Intent(context, DetailActivity::class.java).also {
-                        it.putExtra("app", app)
-                        context.startActivity(it)
-                    }
-                    true
+                        Intent(context, DetailActivity::class.java).also {
+                            it.putExtra("app", app)
+                            context.startActivity(it)
+                        }
+                        true
             }
+            itemView.setOnClickListener {
+            Toast.makeText(context, app.name + "!", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 }
